@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Ibrahim Siddiq - Mechanical Design Engineer. Explore professional experience, mechanical design projects, engineering skills and achievements.">
+
+  <meta name="author" content="Ibrahim Siddiq">
+  <meta name="theme-color" content="#0b1220">
+
+  <title>Ibrahim Siddiq | Mechanical Design Engineer</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- JavaScript -->
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <!-- =================================
+       VISITOR WELCOME POPUP
+  ================================== -->
+
+  <div class="visitor-overlay" id="visitorOverlay">
+
+    <div class="visitor-modal">
+
+      <button class="visitor-close" id="visitorClose" type="button" aria-label="Close popup">
+        &times;
+      </button>
+
+      <div class="visitor-brand">
+        <span class="brand-mark">IS</span>
+        <span>IBRAHIM SIDDIQ</span>
+      </div>
+
+      <div class="visitor-content">
+
+        <span class="eyebrow">WELCOME TO MY PORTFOLIO</span>
+
+        <h1>Engineering ideas into practical solutions.</h1>
+
+        <p>
+          Explore my mechanical design journey, professional experience,
+          projects and engineering capabilities.
+        </p>
+
+        <div class="visitor-choices" id="visitorChoices">
+
+          <button class="visitor-option" id="exploreBtn" type="button">
+            <span class="option-icon">↗</span>
+            <span>
+              <strong>Explore Portfolio</strong>
+              <small>Discover my work and experience</small>
+            </span>
+            <span class="option-arrow">→</span>
+          </button>
+
+          <button class="visitor-option" id="recruiterBtn" type="button">
+            <span class="option-icon">✉</span>
+            <span>
+              <strong>Recruiter / Hiring Manager</strong>
+              <small>Connect with me about opportunities</small>
+            </span>
+            <span class="option-arrow">→</span>
+          </button>
+
+          <button class="visitor-skip" id="skipBtn" type="button">
+            Skip and enter portfolio
+          </button>
+
+        </div>
+
+        <!-- Recruiter Form -->
+
+        <div class="recruiter-panel" id="recruiterPanel" hidden>
+
+          <h2>Let's connect.</h2>
+
+          <p>
+            Please share your details. I'll be happy to connect with you.
+          </p>
+
+          <form
+  id="recruiterForm"
+  name="recruiter-enquiry"
+  method="POST"
+>
+  <input type="hidden" name="_subject"
+    value="New Recruiter Enquiry - Ibrahim Siddiq Portfolio">
+
+  <div class="form-group">
+    <label for="visitorName">Full Name *</label>
+    <input
+      type="text"
+      id="visitorName"
+      name="name"
+      placeholder="Enter your full name"
+      autocomplete="name"
+      required
+    >
+  </div>
+
+  <div class="form-group">
+    <label for="visitorEmail">Email Address *</label>
+    <input
+      type="email"
+      id="visitorEmail"
+      name="email"
+      placeholder="Enter your email"
+      autocomplete="email"
+      required
+    >
+  </div>
+
+  <div class="form-group">
+    <label for="visitorPhone">Phone Number *</label>
+    <input
+      type="tel"
+      id="visitorPhone"
+      name="phone"
+      placeholder="Enter your phone number"
+      autocomplete="tel"
+      required
+    >
+  </div>
+
+  <div class="form-group">
+    <label for="visitorCompany">Company Name</label>
+    <input
+      type="text"
+      id="visitorCompany"
+      name="company"
+      placeholder="Your company name"
+      autocomplete="organization"
+    >
+  </div>
+
+  <div class="form-group">
+    <label for="visitorMessage">Message</label>
+    <textarea
+      id="visitorMessage"
+      name="message"
+      rows="3"
+      placeholder="Write your message..."
+    ></textarea>
+  </div>
+
+  <button class="visitor-submit" id="visitorSubmit" type="submit">
+    Send Enquiry <span>↗</span>
+  </button>
+
+  <button class="visitor-back" id="backToChoices" type="button">
+    ← Back
+  </button>
+</form>
+
+          <div class="visitor-error" id="visitorError" role="alert" hidden>
+            Something went wrong. Please try again.
+          </div>
+
+        </div>
+
+        <!-- Success Message -->
+
+        <div class="visitor-success" id="visitorSuccess" hidden>
+          <div class="success-icon">✓</div>
+          <h2>Thank you for reaching out!</h2>
+          <p>Your enquiry has been submitted successfully.</p>
+
+          <button class="visitor-submit" id="enterAfterSubmit" type="button">
+            Enter Portfolio →
+          </button>
+        </div>
+
+      </div>
+
+      <div class="visitor-footer">
+        <span>MECHANICAL DESIGN ENGINEER</span>
+        <span>CHENNAI, INDIA</span>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- =================================
+       CERTIFICATE LIGHTBOX MODAL
+  ================================== -->
+
+  <div class="cert-lightbox" id="certLightbox" hidden>
+    <button class="visitor-close" id="certLightboxClose" type="button" aria-label="Close certificate preview">&times;</button>
+    <img id="certLightboxImg" src="" alt="Certificate preview">
+  </div>
+
+
+  <!-- =================================
+       MAIN PORTFOLIO
+  ================================== -->
+
+  <div class="portfolio-wrapper">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+      <a href="#about" class="identity" data-tab="about">
+        <div class="profile-avatar">
+          <img src="Professional Picture.png" alt="Ibrahim Siddiq">
+        </div>
+
+        <div class="identity-details">
+          <h1>Ibrahim Siddiq</h1>
+          <p>Mechanical Design Engineer</p>
+        </div>
+      </a>
+
+      <div class="sidebar-divider"></div>
+
+      <div class="sidebar-info">
+
+        <div class="info-item">
+          <span class="info-icon">⌖</span>
+          <span>Chennai, India</span>
+        </div>
+
+        <div class="info-item">
+          <span class="info-icon">▣</span>
+          <span>9 Years Experience</span>
+        </div>
+
+        <div class="info-item">
+          <span class="info-icon">◈</span>
+          <span>Lead Engineer – HCLTech</span>
+        </div>
+
+      </div>
+
+      <div class="sidebar-divider"></div>
+
+      <div class="sidebar-label">DESIGN SPECIALIZATION</div>
+
+      <div class="specialization-tags">
+        <span>Mechanical Design &amp; Dev</span>
+        <span>Structural Components</span>
+        <span>Product Development</span>
+        <span>3D Solid &amp; Surface</span>
+        <span>Sheet Metal Design</span>
+        <span>SPM Machine Design</span>
+        <span>Jig &amp; Fixtures</span>
+        <span>Creo Parametric</span>
+        <span>Windchill PDM</span>
+        <span>Engineering Change Mgmt</span>
+        <span>GA &amp; Mfg Drawings</span>
+        <span>BOM Management</span>
+        <span>Design Risk Assessment</span>
+        <span>Requirements Engg</span>
+        <span>Cost Optimization</span>
+        <span>Design Verification</span>
+        <span>Cross-Functional Coord</span>
+      </div>
+
+      <div class="sidebar-divider"></div>
+
+      <div class="sidebar-contact">
+
+        <div class="sidebar-label">CONNECT</div>
+
+        <a href="mailto:siddiq.ibu@gmail.com">
+          <span>✉</span> Email Me
+        </a>
+
+        <a href="tel:+91-8072086372">
+          <span>☎</span> Call Me
+        </a>
+
+        <a href="https://www.linkedin.com/in/ibusiddiq?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer">
+          <span>in</span> LinkedIn
+        </a>
+
+        <a href="IBRAHIM SIDDIQ.pdf" download class="secondary-btn">
+          Download Resume
+        </a>
+
+      </div>
+
+      <div class="sidebar-bottom">
+        <span class="availability-dot"></span>
+        Open to professional connections
+      </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+      <!-- TOP NAVIGATION -->
+
+      <header class="topbar">
+
+        <div class="topbar-heading">
+          <span class="eyebrow"><h1>PROFESSIONAL PORTFOLIO</h1></span>
+        </div>
+
+        <nav class="tabs" role="tablist" aria-label="Main navigation">
+          <a href="#about" class="active" data-tab="about" role="tab" aria-selected="true">About</a>
+          <a href="#projects" data-tab="projects" role="tab" aria-selected="false">Projects</a>
+          <a href="#experience" data-tab="experience" role="tab" aria-selected="false">Journey</a>
+          <a href="#skills" data-tab="skills" role="tab" aria-selected="false">Skills</a>
+          <a href="#education" data-tab="education" role="tab" aria-selected="false">Education</a>
+          <a href="#awards" data-tab="awards" role="tab" aria-selected="false">Awards</a>
+          <a href="#contact" data-tab="contact" role="tab" aria-selected="false">Contact</a>
+        </nav>
+
+      </header>
+
+
+      <!-- =================================
+           ABOUT (default / landing tab)
+      ================================== -->
+
+      <section class="content-section tab-panel" id="about" data-panel="about" role="tabpanel" aria-labelledby="tab-about">
+
+        <div class="section-heading">
+          <span class="section-number">ABOUT</span>
+          <h2>Professional Overview</h2>
+        </div>
+
+        <div class="about-card">
+
+          <p>
+            I'm a Mechanical Design Engineer with over nine years of
+            experience turning complex engineering problems into
+            practical, field-ready solutions — from wind turbine
+            service tooling to automotive plastics welding systems.
+          </p>
+
+          <p>
+            As Lead Engineer at HCLTech on the Vestas account, I design
+            tools that keep turbines running: a transformer lid lifting
+            tool that cut downtime 5:1 and saved €3.4M in production
+            costs, and a gearbox O-ring replacement tool that enabled
+            critical on-site repairs. Earlier, at Dukane, I designed
+            welding workstations for major automotive programs —
+            including Ford, Volkswagen and Range Rover suppliers —
+            across vibration, hot gas and hotplate welding technologies.
+            I'm currently pursuing an M.Tech at BITS Pilani while
+            continuing to deliver 350+ engineering solutions a year in
+            my current role.
+          </p>
+
+        </div>
+
+        <div class="conviction-grid">
+
+          <article class="conviction-card">
+            <span class="conviction-icon">⛔</span>
+            <span class="conviction-label">THE PROBLEM I'M HERE TO KILL</span>
+            <h3>Unplanned downtime that bleeds money.</h3>
+            <p>
+              A turbine offline for days over a transformer swap. A welding
+              fixture that looked fine on screen but scraps parts on the
+              line. These aren't edge cases — they're the default when
+              design stops at the drawing and never gets tested against
+              the shop floor or the top of a tower. I'm here to close that
+              gap: to design tooling that survives contact with reality,
+              so teams spend less time firefighting and more time
+              building. €3.4M saved and a 5:1 cut in downtime on one tool
+              alone is the kind of result I chase on every project.
+            </p>
+          </article>
+
+          <article class="conviction-card">
+            <span class="conviction-icon">⚡</span>
+            <span class="conviction-label">WHY I'M ALL IN</span>
+            <h3>I design for the hands that use it.</h3>
+            <p>
+              Nine years in, the thing that still gets me going isn't the
+              CAD model — it's knowing a technician 80 meters up a turbine,
+              or an operator on an automotive line, is actually relying on
+              something I designed to work, first time, every time. I've
+              moved from vibration-welded automotive tooling at Dukane to
+              critical turbine service tools at HCLTech, and every step
+              has been chasing that same feeling: taking a problem that's
+              costing someone real time or real money, and engineering a
+              solution that simply holds up. I'm pursuing an M.Tech at
+              BITS Pilani because I want to keep getting better at this —
+              not because I have to.
+            </p>
+          </article>
+
+        </div>
+
+        <!-- RECOMMENDATIONS (Moved from Awards tab) -->
+
+        <div class="section-heading recommendations-heading">
+          <span class="section-number">RECOMMENDATIONS</span>
+          <h2>What Colleagues Say</h2>
+        </div>
+
+        <div class="testimonial-grid">
+
+          <article class="testimonial-card">
+            <span class="quote-mark">“</span>
+            <p>
+              I had the pleasure of working with Ibrahim and I was always
+              impressed by his technical skills, positive attitude and
+              calm approach under pressure. He showed great ownership of
+              tasks, took responsibility without hesitation and handled
+              challenging, complex projects — both internal and global —
+              with patience and maturity. He is proactive in his work: a
+              reliable and dedicated team member who adds real value to
+              any team.
+            </p>
+            <div class="testimonial-author">
+              <div>
+                <a href="https://www.linkedin.com/in/nishanth-ga/" target="_blank" rel="noopener noreferrer">Nishanth GA</a>
+                <span class="testimonial-role">Senior Manager – Engineering &amp; Technology</span>
+              </div>
+              <span class="testimonial-meta">Managed Ibrahim directly · Jun 2025</span>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <span class="quote-mark">“</span>
+            <p>
+              Ibrahim is an extremely talented individual who always
+              strives to find the best solution for any project he works
+              on. His "will to win" attitude is refreshing, and he will
+              research around the project to provide the best solution.
+              He was a great colleague and an extremely hard worker,
+              always willing to help others, with excellent work ethic
+              and dedicated loyalty through high-quality service delivery.
+              I'd strongly recommend him.
+            </p>
+            <div class="testimonial-author">
+              <div>
+                <a href="https://www.linkedin.com/in/rajesh-ganesan-98b7081b/" target="_blank" rel="noopener noreferrer">Rajesh Ganesan</a>
+                <span class="testimonial-role">R&amp;D Professional · Six Sigma Green Belt</span>
+              </div>
+              <span class="testimonial-meta">Worked on the same team · Jun 2025</span>
+            </div>
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================
+           PROJECTS
+      ================================== -->
+
+      <section class="content-section tab-panel" id="projects" data-panel="projects" role="tabpanel" aria-labelledby="tab-projects" hidden>
+
+        <div class="section-heading">
+          <span class="section-number">PROJECTS</span>
+          <h2>Selected Engineering Projects</h2>
+          <p>Engineering solutions delivered across wind energy service and automotive plastics welding.</p>
+        </div>
+
+        <div class="project-filters" id="projectFilters" role="tablist" aria-label="Filter projects by company">
+          <button type="button" class="filter-pill active" data-filter="all" aria-pressed="true">All Work</button>
+          <button type="button" class="filter-pill" data-filter="vestas" aria-pressed="false">HCLTech · Vestas</button>
+          <button type="button" class="filter-pill" data-filter="dukane" aria-pressed="false">Dukane</button>
+        </div>
+
+        <!-- ============ HCLTech · VESTAS ============ -->
+
+        <div class="company-group" data-group="vestas">
+
+          <div class="company-header">
+            <span class="company-mark vestas-mark">V</span>
+            <div>
+              <h3>HCLTech <span class="company-sep">×</span> Vestas Wind Systems</h3>
+              <p>Up-tower service engineering for wind turbine operations · Lead Engineer, Nov 2022 – Present</p>
+            </div>
+          </div>
+
+          <div class="vestas-grid">
+
+            <article class="impact-card">
+              <div class="impact-metric">
+                <span class="impact-number">€3.4M</span>
+                <span class="impact-unit">saved</span>
+              </div>
+              <div class="impact-body">
+                <span class="impact-tag">MECHANICAL DESIGN · LIFTING EQUIPMENT</span>
+                <h4>Transformer Lid Lifting Tool</h4>
+                <p>
+                  Designed a transformer lid lifting tool enabling up-tower repairs and
+                  eliminating full transformer removal — cutting turbine downtime
+                  <strong>5:1</strong> and saving an estimated <strong>€3.4M</strong> in lost
+                  production costs.
+                </p>
+              </div>
+            </article>
+
+            <article class="impact-card">
+              <div class="impact-metric">
+                <span class="impact-number">5:1</span>
+                <span class="impact-unit">downtime cut</span>
+              </div>
+              <div class="impact-body">
+                <span class="impact-tag">PRODUCT DESIGN · MAINTENANCE TOOLING</span>
+                <h4>Gearbox O-ring Replacement Tool</h4>
+                <p>
+                  Developed a specialized O-ring replacement tool for the pitch tube at the
+                  gearbox and main shaft interface, enabling on-site repair of critical oil
+                  leaks and reducing downtime penalties.
+                </p>
+              </div>
+            </article>
+
+            <article class="impact-card">
+              <div class="impact-metric">
+                <span class="impact-number">350+</span>
+                <span class="impact-unit">solutions / yr</span>
+              </div>
+              <div class="impact-body">
+                <span class="impact-tag">SERVICE ENGINEERING · PROCESS IMPROVEMENT</span>
+                <h4>Turbine Service Engineering Program</h4>
+                <p>
+                  Delivered 350+ annual engineering solutions for turbine service
+                  operations, doubling team output and improving 2025 operational
+                  efficiency.
+                </p>
+              </div>
+            </article>
+
+          </div>
+
+        </div>
+
+        <!-- ============ DUKANE ============ -->
+
+        <div class="company-group" data-group="dukane">
+
+          <div class="company-header">
+            <span class="company-mark dukane-mark">D</span>
+            <div>
+              <h3>Dukane <span class="company-sep">—</span> Automotive Plastics Welding</h3>
+              <p>Mechanical design for welding workstations &amp; tooling · Mechanical Design Engineer, Oct 2017 – Nov 2022</p>
+            </div>
+          </div>
+
+          <div class="dukane-grid">
+
+            <article class="weld-card">
+              <div class="weld-top">
+                <span class="weld-icon">⚙</span>
+                <span class="weld-tech">Vibration Welding</span>
+              </div>
+              <h4>C1YC-2 Dual Station Welding</h4>
+              <dl class="weld-specs">
+                <div><dt>Product</dt><dd>Trunk Lamp</dd></div>
+                <div><dt>End Application</dt><dd>Chevrolet Transverse Trunk Lamp</dd></div>
+                <div><dt>Customer</dt><dd>Auto System America Inc. (Magna Lighting)</dd></div>
+              </dl>
+            </article>
+
+            <article class="weld-card">
+              <div class="weld-top">
+                <span class="weld-icon">◈</span>
+                <span class="weld-tech">Hot Gas Welding</span>
+              </div>
+              <h4>MLA L461 Dual Cavity Welding</h4>
+              <dl class="weld-specs">
+                <div><dt>Product</dt><dd>Alternator Cover</dd></div>
+                <div><dt>End Application</dt><dd>Range Rover Alternator Cover</dd></div>
+                <div><dt>Customer</dt><dd>Vibracoustic</dd></div>
+              </dl>
+            </article>
+
+            <article class="weld-card">
+              <div class="weld-top">
+                <span class="weld-icon">▦</span>
+                <span class="weld-tech">Hotplate Welding</span>
+              </div>
+              <h4>VW216 Single Station Welding</h4>
+              <dl class="weld-specs">
+                <div><dt>Product</dt><dd>Glovebox</dd></div>
+                <div><dt>End Application</dt><dd>Volkswagen Taigun Glovebox</dd></div>
+                <div><dt>Customer</dt><dd>International Automotive Groups</dd></div>
+              </dl>
+            </article>
+
+            <article class="weld-card">
+              <div class="weld-top">
+                <span class="weld-icon">⌘</span>
+                <span class="weld-tech">Vibration Welding</span>
+              </div>
+              <h4>P702 Dual Station Welding</h4>
+              <dl class="weld-specs">
+                <div><dt>Product</dt><dd>Tail Lamp</dd></div>
+                <div><dt>End Application</dt><dd>Ford Truck F-150 Tail Lamp</dd></div>
+                <div><dt>Customer</dt><dd>Ventra Flex-N-Gate</dd></div>
+              </dl>
+            </article>
+
+            <article class="weld-card">
+              <div class="weld-top">
+                <span class="weld-icon">✓</span>
+                <span class="weld-tech">Vibration Welding</span>
+              </div>
+              <h4>HBC Single Station Welding</h4>
+              <dl class="weld-specs">
+                <div><dt>Product</dt><dd>Spoiler</dd></div>
+                <div><dt>End Application</dt><dd>Renault Kiger Spoiler</dd></div>
+                <div><dt>Customer</dt><dd>Novares India Automotive Pvt. Ltd.</dd></div>
+              </dl>
+            </article>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================
+           EXPERIENCE
+      ================================== -->
+
+      <section class="content-section tab-panel" id="experience" data-panel="experience" role="tabpanel" aria-labelledby="tab-experience" hidden>
+
+        <div class="section-heading">
+          <span class="section-number">JOURNEY</span>
+          <h2>My Career Roadmap</h2>
+          <p>Every milestone that has shaped me as an engineer — from where I started to where I'm headed next.</p>
+        </div>
+
+        <div class="roadmap" id="roadmap">
+
+          <div class="roadmap-line">
+            <div class="roadmap-progress" id="roadmapProgress"></div>
+          </div>
+
+          <article class="roadmap-node future" data-index="0">
+            <div class="roadmap-marker"><span>◎</span></div>
+            <div class="roadmap-content">
+              <div class="roadmap-top">
+                <span class="roadmap-date">JUL 2026 – PRESENT</span>
+                <span class="ongoing-badge">ONGOING</span>
+              </div>
+              <h3>M.Tech in Mechanical Engineering</h3>
+              <h4>BITS Pilani · Work Integrated Learning</h4>
+              <p>Deepening my engineering fundamentals further while working, to design smarter and more reliable solutions.</p>
+            </div>
+          </article>
+
+          <article class="roadmap-node current" data-index="1">
+            <div class="roadmap-marker"><span>⚙</span></div>
+            <div class="roadmap-content">
+              <div class="roadmap-top">
+                <span class="roadmap-date">NOV 2022 – PRESENT</span>
+                <span class="current-badge">CURRENT ROLE</span>
+              </div>
+              <h3>Lead Engineer</h3>
+              <h4>HCLTech</h4>
+              <p>Leading mechanical engineering design and development, contributing to engineering projects and design activities end-to-end.</p>
+            </div>
+          </article>
+
+          <article class="roadmap-node" data-index="2">
+            <div class="roadmap-marker"><span>◈</span></div>
+            <div class="roadmap-content">
+              <div class="roadmap-top">
+                <span class="roadmap-date">OCT 2017 – NOV 2022</span>
+              </div>
+              <h3>Mechanical Design Engineer</h3>
+              <h4>Dukane</h4>
+              <p>Worked on mechanical design activities, engineering solutions and product-related design requirements for 5+ years.</p>
+            </div>
+          </article>
+
+          <article class="roadmap-node origin" data-index="3">
+            <div class="roadmap-marker"><span>🎓</span></div>
+            <div class="roadmap-content">
+              <div class="roadmap-top">
+                <span class="roadmap-date">2013 – 2017</span>
+                <span class="origin-badge">WHERE IT STARTED</span>
+              </div>
+              <h3>Bachelor of Engineering</h3>
+              <h4>Mechanical Engineering</h4>
+              <p>Built the foundation — core mechanical engineering principles that still shape how I approach every design problem today.</p>
+            </div>
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================
+           SKILLS
+      ================================== -->
+
+      <section class="content-section tab-panel" id="skills" data-panel="skills" role="tabpanel" aria-labelledby="tab-skills" hidden>
+
+        <div class="section-heading">
+          <span class="section-number">EXPERTISE</span>
+          <h2>Technical Skills</h2>
+          <p>Engineering knowledge and design capabilities.</p>
+        </div>
+
+        <div class="skills-grid">
+
+          <div class="skill-card">
+            <span class="skill-icon">⚙</span>
+            <h3>Creo Parametric</h3>
+            <p>3D CAD Design</p>
+          </div>
+
+          <div class="skill-card">
+            <span class="skill-icon">◇</span>
+            <h3>Mechanical Design</h3>
+            <p>Engineering Design</p>
+          </div>
+
+          <div class="skill-card">
+            <span class="skill-icon">▦</span>
+            <h3>Jigs &amp; Fixtures</h3>
+            <p>Manufacturing Support</p>
+          </div>
+
+          <div class="skill-card">
+            <span class="skill-icon">⌘</span>
+            <h3>Product Development</h3>
+            <p>Design Development</p>
+          </div>
+
+          <div class="skill-card">
+            <span class="skill-icon">◈</span>
+            <h3>SPM Design</h3>
+            <p>Special Purpose Machines</p>
+          </div>
+
+          <div class="skill-card">
+            <span class="skill-icon">✓</span>
+            <h3>Problem Solving</h3>
+            <p>Engineering Solutions</p>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================
+           EDUCATION
+      ================================== -->
+
+      <section class="content-section tab-panel" id="education" data-panel="education" role="tabpanel" aria-labelledby="tab-education" hidden>
+
+        <div class="section-heading">
+          <span class="section-number">EDUCATION</span>
+          <h2>Academic Background</h2>
+        </div>
+
+        <div class="education-grid">
+
+          <article class="education-card">
+
+            <span class="education-year">JUL 2026 – PRESENT</span>
+
+            <h3>Master of Technology (M.Tech)</h3>
+
+            <p>BITS Pilani – Work Integrated Learning Programme</p>
+
+          </article>
+
+          <article class="education-card">
+
+            <span class="education-year">2013 – 2017</span>
+
+            <h3>Bachelor of Engineering</h3>
+
+            <p>Mechanical Engineering</p>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================
+           AWARDS
+      ================================== -->
+
+      <section class="content-section tab-panel" id="awards" data-panel="awards" role="tabpanel" aria-labelledby="tab-awards" hidden>
+
+        <div class="section-heading">
+          <span class="section-number">RECOGNITION</span>
+          <h2>Awards &amp; Certifications</h2>
+          <p>Recognition from the organizations I've worked with, and credentials that back up the work.</p>
+        </div>
+
+        <div class="cert-grid">
+
+          <article class="cert-card">
+            <div class="cert-top">
+              <span class="cert-badge vestas-cert">★</span>
+              <span class="cert-date">AUG 2026</span>
+            </div>
+            <div class="cert-image-wrap">
+              <img src="Star of the Month.jpg" alt="Vestas Certificate of Recognition - Star of the Month Aug 2026 awarded to Ibrahim Siddiq" loading="lazy">
+            </div>
+            <span class="cert-issuer">VESTAS WIND SYSTEMS</span>
+            <h3>Star of the Month</h3>
+            <p>
+              Recognized for my efforts in addressing ECM backlogs and
+              helping drive the transition from SOP to One Breeze — by
+              working closely with stakeholders and taking ownership of
+              the end-to-end process. Moments like this are a reminder
+              that consistent effort, teamwork and a willingness to take
+              ownership make a real impact.
+            </p>
+            <span class="cert-signee">Awarded by Sakthivel R, Manager – TLE Service Tools</span>
+          </article>
+
+          <article class="cert-card">
+            <div class="cert-top">
+              <span class="cert-badge geomiq-cert">⌖</span>
+              <span class="cert-date">JUN 2025</span>
+            </div>
+            <div class="cert-image-wrap">
+              <img src="GD&T.png" alt="Geomiq Academy 3D Geometric Dimensioning & Tolerancing Certified - Ibrahim Siddiq" loading="lazy">
+            </div>
+            <span class="cert-issuer">GEOMIQ ACADEMY</span>
+            <h3>3D GD&amp;T Certified</h3>
+            <p>
+              Completed "Mastering 3D Geometric Dimensioning &amp; Tolerancing
+              (GD&amp;T)" — covering GD&amp;T symbols, datums and tolerancing
+              principles used to communicate design intent clearly for
+              manufacturing, inspection and quality control.
+            </p>
+            <span class="cert-signee">Issued by Geomiq Academy · Cert ID: cert_ynmccrfk</span>
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================
+           CONTACT
+      ================================== -->
+
+      <section class="content-section contact-section tab-panel" id="contact" data-panel="contact" role="tabpanel" aria-labelledby="tab-contact" hidden>
+
+        <div class="section-heading">
+          <span class="section-number">CONTACT</span>
+          <h2>Let's Connect</h2>
+          <p>
+            Have a project, opportunity or professional enquiry?
+            Feel free to get in touch.
+          </p>
+        </div>
+
+        <div class="contact-card">
+
+          <div class="contact-text">
+            <h3>Let's build something meaningful.</h3>
+            <p>
+              I'm open to professional conversations,
+              engineering opportunities and collaborations.
+            </p>
+          </div>
+
+          <div class="contact-actions">
+
+            <a href="mailto:siddiq.ibu@gmail.com" class="primary-btn">
+              Email Me ↗
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/ibusiddiq?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="secondary-btn"
+            >
+              LinkedIn Profile
+            </a>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- FOOTER -->
+
+      <footer class="footer">
+
+        <p>
+          © <span id="year"></span> Ibrahim Siddiq. All rights reserved.
+        </p>
+
+        <p>
+          Designed with precision and passion.
+        </p>
+      </footer> 
+    </main>
+  </div>
+</body>
+</html>
