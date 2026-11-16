@@ -178,7 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const formData = new FormData(form);
 
         const response = await fetch(
-          "https://formsubmit.co/ajax/abdul8426n@gmail.com",
+          "https://formsubmit.co/ajax/siddiq.ibu@gmail.com",
           {
             method: "POST",
 
